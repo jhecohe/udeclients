@@ -32,9 +32,9 @@ public class ClientController {
 		return new ResponseEntity<List<Client>>(clientService.findAll(), HttpStatus.OK	);
 	}
 	
-	@PostMapping("client/{id}")
+	@GetMapping("client/{id}")
 	public ResponseEntity<Client> getClient(@PathVariable Long id){
-		return new ResponseEntity<Client>(clientService.findById(id), HttpStatus.FOUND );
+		return new ResponseEntity<Client>(clientService.findById(id), HttpStatus.OK );
 	}
 	
 	@PostMapping("client")
